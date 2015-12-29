@@ -13,6 +13,9 @@ To help in this work, there are a variety of tools available like Jenkins.
 
 * [Objectives](#objectives)
 
+## Objectives
+
+This document aims at make a complete description of the continuous integration system used in BEEVA projects.
 
 ---------------
 
