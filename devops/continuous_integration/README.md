@@ -12,10 +12,16 @@ It aims to avoid integration problems and deliver the software often, but with t
 
 * [Objectives](#objectives)
 * [Technologies and tools](#)
-	* [Jenkins](#Jenkins)
-	* [Maven](#maven)
-	* [Sonar](#sonar)
-
+	* [Jenkins](#jenkins)
+		* [Funcionamiento general](#funcionamiento)
+		* [Consejos de uso](#consejos)
+		* [Herramientas y plugins](#herramientasyplugins)
+			* [Maven (compilación)](#maven)
+			* [SVN (control de versiones)](#svn)
+			* [Git/Github (control de versiones)](#git)
+			* [Sonar (calidad de código)](#sonar)
+			* [Selenium (pruebas de navegabilidad de front)](#selenium)
+			* [Dimensions (herramienta de control de versiones y despliegue entre entornos usada en BBVA)](#dimensions)
 
 
 ## Objectives
