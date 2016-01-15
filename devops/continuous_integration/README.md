@@ -22,6 +22,7 @@ It aims to avoid integration problems and deliver the software often, but with t
 			* [Sonar (calidad de código)](#sonar)
 			* [Selenium (pruebas de navegabilidad de front)](#selenium)
 			* [Dimensions (herramienta de control de versiones y despliegue entre entornos usada en BBVA)](#dimensions)
+		* [Bamboo](#bamboo)
 
 
 ## Objectives
@@ -44,13 +45,31 @@ To help in this work, there are a variety of tools available like Jenkins, Apach
 
 Jenkins is an continuous integration and continuous delivery application that increases your productivity allowing to build and test your software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build.
 
-#### Installation
+#### How Jenkins work
 
+Jenkins needs an installed Tomcat versión 5.0 or later.
 Jenkins requires Java7 or above to function. Java8 is recommended. Jenkins requires a fair amount of memory to operate well. Smaller installations should start around 256MB-1GB.
 
+[Jenkins install official documentation](https://wiki.jenkins-ci.org/display/JENKINS/Tomcat)
 
+
+In the next picture you can see the list of jobs ready to be executed in a jenkins instance.
+
+![Jenkins Projects](static/jenkins_projects.png)
+
+
+Primary options to configure, execute and a history of the executed jobs
+![Jenkins job options](static/jenkins_job_options.png)
+
+
+The result of a deploy in a Jenkins job:
+
+![Jenkins job deploy 1](static/jenkins_job1.png)
+![Jenkins job deploy 2](static/jenkins_job2.png)
 
 #### Configuration
+
+
 
 
 
@@ -61,7 +80,9 @@ Jenkins requires Java7 or above to function. Java8 is recommended. Jenkins requi
 ### Sonar
 
 
+### Bamboo
 
+Bamboo is a continuous integration and delivery tool that ties automated builds, tests and releases together in a single workflow.
 
 
 [BEEVA](http://www.beeva.com) | 2015
