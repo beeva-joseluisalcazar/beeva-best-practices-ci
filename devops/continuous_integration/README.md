@@ -13,15 +13,15 @@ It aims to avoid integration problems and deliver the software often, but with t
 * [Objectives](#objectives)
 * [Technologies and tools](#)
 	* [Jenkins](#jenkins)
-		* [Funcionamiento general](#funcionamiento)
-		* [Consejos de uso](#consejos)
-		* [Herramientas y plugins](#herramientasyplugins)
-			* [Maven (compilación)](#maven)
-			* [SVN (control de versiones)](#svn)
-			* [Git/Github (control de versiones)](#git)
-			* [Sonar (calidad de código)](#sonar)
-			* [Selenium (pruebas de navegabilidad de front)](#selenium)
-			* [Dimensions (herramienta de control de versiones y despliegue entre entornos usada en BBVA)](#dimensions)
+		* [General working](#working)
+		* [Best practices](#bestpractices)
+		* [Tools and plugins](#tools)
+			* [Maven (compiling)](#maven)
+			* [SVN (version control)](#svn)
+			* [Git/Github (version control)](#git)
+			* [Sonar (code quality)](#sonar)
+			* [Selenium (browser testing test)](#selenium)
+			* [Dimensions (tool for control version and deploy)](#dimensions)
 		* [Bamboo](#bamboo)
 
 
@@ -82,7 +82,12 @@ The result of a deploy in a Jenkins job:
 
 ### Bamboo
 
-Bamboo is a continuous integration and delivery tool that ties automated builds, tests and releases together in a single workflow.
+Bamboo is a continuous integration and delivery tool that ties automated builds, tests and releases together in a single workflow, it integrates perfectly with Jira ( a the project management tool for agile teams, both are atlassian products)
+
+If connecting with Bitbucket and JIRA Software, details like JIRA issues, commits, reviews and approvals follow each release of your application from development to production.
+
+
+Here can see a bamboo sample project [https://confluence.atlassian.com/bamboo/a-sample-deployment-project-365658897.html](https://confluence.atlassian.com/bamboo/a-sample-deployment-project-365658897.html)
 
 
 [BEEVA](http://www.beeva.com) | 2015
