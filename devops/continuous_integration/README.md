@@ -16,9 +16,10 @@ It aims to avoid integration problems and deliver the software often, but with t
 		* [General working](#working)
 		* [Best practices](#bestpractices)
 		* [Tools and plugins](#tools)
-			* [Maven (compiling)](#maven)
 			* [SVN (version control)](#svn)
 			* [Git/Github (version control)](#git)
+			* [Maven (compiling)](#maven)
+			* [Artifactory (artifact managing)
 			* [Sonar (code quality)](#sonar)
 			* [Selenium (browser testing test)](#selenium)
 			* [Dimensions (tool for control version and deploy)](#dimensions)
@@ -69,15 +70,53 @@ The result of a deploy in a Jenkins job:
 
 #### Configuration
 
+### SVN
 
-
-
+### Git/Github
 
 ### Maven
+
+Jenkins distributions contain, by default, a Maven Project plugin version to allow running Maven projects. This plugin must be first set up to use a local Maven installation. If there's no local installation, we can select and download a version directly from the configuration section (Manage Jenkins -> Configure system):
+
+![Maven plugin configuration](static/jenkins_maven_config.png)
+
+Once Maven plugin is ready, Maven projects can be run on Jenkins in two different ways:
+
+1.- Running a "Maven task" step in any kind of job:
+
+![Maven task step in a generic job](static/jenkins_maven_step.png)
+
+This way is useful when several independent Maven projects will run in the same job.
+
+2.- Creating a "Maven project" job:
+
+This kind of job allows to easily configure some maven-oriented enhancenments in order to automate continuous integration between different projects:
+
+	* Maven jobs can be configured to be triggered when any of its snapshot dependencies is built on the same Jenkins. This is achieved by parsing the POMs.
+![Maven job Triggers](static/jenkins_maven_job_triggers.png)
+
+	* Build stage can be deeply customized without changing POMs files. Some interesting Maven options can be configured by checking/unchecking them.
+![Maven job Build options](static/jenkins_maven_job_build_options.png)
+
+	* A helpful post-build action is also available: we can automatically upload artifacts to Maven repositories once the build is done.
+![Maven job Post-build options](static/jenkins_maven_job_postbuild_options.png)
+
+At least, we can check the quality of a Maven project by simply checking the historical graph, which provides a visual report.
 
 
 
 ### Sonar
+
+### Selenium
+
+### Dimensions
+
+Dimensions CM is a tool developed by Serena that provides capabilities for managing the whole lifecycle of a project: revision control, change, build and release management ([more info](http://www.serena.com/index.php/en/products/application-development/dimensions-cm/overview/)).
+
+Thanks to this [unofficial plugin](https://wiki.jenkins-ci.org/display/JENKINS/Dimensions+Plugin), Jenkins can connect to Dimensions to:
+* Download code from streams, projects and baselines.
+* Deliver content into Dimensions streams and projects and relate the changes to a PIMP.
+* Create baselines from streams and projects.
 
 
 ### Bamboo
