@@ -4,6 +4,10 @@ Continuous integration (CI) is the practice of continuously integrating (and tes
 
 It aims to avoid integration problems and deliver the software often, but with the security it will work, so it's based in "maximum automation".
 
+Basicaly, Continuous Integration also refered to as "build automation":
+- Continuously integrates newly checked-in code into a build.
+- Optionally runs unit tests and rejects the build if they fail.
+- Also optionally can deploy builds to other servers.
 
 ![alt text](https://github.com/beeva/beeva-best-practices/blob/master/static/horizontal-beeva-logo.png "BEEVA")
 
@@ -30,13 +34,12 @@ It aims to avoid integration problems and deliver the software often, but with t
 
 This document aims at make a complete description of the continuous integration system used in BEEVA projects.
 
-Using CI we will be able to keep a making sure the software checked in on the mainline is always in a state that can be deployed. 
+Using CI we will be able to asure the software checked in on the mainline is always in a state that can be deployed.
 Test, support, development and operations work together as one delivery team to automate and streamline the build, test and release process.
 
 Continuous Delivery is the natural extension of Continuous Integration: an approach in which teams ensure that every change to the system is releasable, and that we can release any version at the push of a button.
 
-To help in this work, there are a variety of tools available like Jenkins, Apache Continuum or Bamboo.
-
+To help in this work, there are a variety of tools and plugins available like Jenkins, Apache Continuum or Bamboo, git/github, Maven, Sonar, Selenium, etc 
 
 
 ## Architecture, technologies and tools
@@ -44,15 +47,24 @@ To help in this work, there are a variety of tools available like Jenkins, Apach
 
 ### Jenkins
 
-Jenkins is an continuous integration and continuous delivery application that increases your productivity allowing to build and test your software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build.
+Jenkins is a continuous integration and continuous delivery application that allows to build and test  software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build.
 
-#### How Jenkins work
+It's and open source tool, runs as java web application on container such as Tomcat.
+Formely known as Hudson, and forked from the original Hudson adquired by Oracle.
 
-Jenkins needs an installed Tomcat versión 5.0 or later.
-Jenkins requires Java7 or above to function. Java8 is recommended. Jenkins requires a fair amount of memory to operate well. Smaller installations should start around 256MB-1GB.
+#### How Jenkins works
+
+Jenkins:
+- Integrates with source control (Svn, Git, etc)
+- Builds can be triggered either on a schedule o buy hitting a URL (cron+url, post-commit hooks in scm)
+- What the build does is dictaded by configuration
+
+
+Jenkins uses jobs to work, a job defines a sequence of tasks for Jenkins to perform.
+Jobs are typically project-oriented, and when a job is triggered, Jenkins follows some defined steps (an ants script sometimes), post-build tasks can also be defined (create a WAR, copy files to another location, etc) 
+
 
 [Jenkins install official documentation](https://wiki.jenkins-ci.org/display/JENKINS/Tomcat)
-
 
 In the next picture you can see the list of jobs ready to be executed in a jenkins instance.
 
